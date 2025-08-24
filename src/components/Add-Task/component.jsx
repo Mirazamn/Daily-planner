@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 
-function AddTask({setTask}) {
+function AddTask({setTask, date}) {
   const [value, setValue] = useState('');
   const [tasks, setTasks] = useState([]);
 
@@ -10,13 +10,13 @@ function AddTask({setTask}) {
   }
 
   useEffect(() => {
-    fetch('https://planner-server-production.up.railway.app/')
+    fetch('')
       .then(res => res.json())
       .then(data => setTasks(data));
   }, []);
 
   const PostTask = () => {
-    fetch('https://planner-server-production.up.railway.app/', {
+    fetch(`http://localhost:3333/${date}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

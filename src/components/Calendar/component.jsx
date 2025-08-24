@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 function Calendar() {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -73,10 +74,10 @@ function Calendar() {
           const isNewMonth = date.getDate() === 1
 
           return (
-            <div key={date.toDateString()} className={'day flex ' + (isToday ? 'today': isNewMonth ? 'month' : '')}>
+            <Link to={`/${date.getDate()}-${(date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}-${date.getFullYear()}`} key={date.toDateString()} className={'day flex ' + (isToday ? 'today': isNewMonth ? 'month' : '')}>
               <h6>{date.toLocaleDateString("en-US", {weekday: "short"})}</h6>
               <h3>{date.getDate()}</h3>
-            </div>
+            </Link>
           )
         })}
 
