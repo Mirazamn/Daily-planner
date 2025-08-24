@@ -11,7 +11,7 @@ function Tasks({ task, date }) {
     const [PostTasks, setPostTasks] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3333/${date}`).then(res => res.json())
+        fetch(`https://planner-server-production.up.railway.app/${date}`).then(res => res.json())
         .then(data => {
             setTasks(data)
         }).catch(err => {
@@ -25,7 +25,7 @@ function Tasks({ task, date }) {
           tasks: updatedTasks
       }
 
-      fetch('http://localhost:3333/', {
+      fetch('https://planner-server-production.up.railway.app/', {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -33,7 +33,7 @@ function Tasks({ task, date }) {
 }
 
     const DeleteTask = (id) => {
-        fetch(`http://localhost:3333/${date}/${id}`, {
+        fetch(`https://planner-server-production.up.railway.app/${date}/${id}`, {
             method: 'DELETE'
         }).then(() => {
             const updatedTasks = tasks.filter(task => Number(task.id) !== Number(id));
@@ -55,7 +55,7 @@ function Tasks({ task, date }) {
     }
 
     const PostTask = () => {
-    fetch(`http://localhost:3333/${date}`, {
+    fetch(`https://planner-server-production.up.railway.app/${date}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

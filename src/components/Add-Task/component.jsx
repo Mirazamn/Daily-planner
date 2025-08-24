@@ -16,7 +16,7 @@ function AddTask({setTask, date}) {
   }, []);
 
   const PostTask = () => {
-    fetch(`http://localhost:3333/${date}`, {
+    fetch(`https://planner-server-production.up.railway.app/${date}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
