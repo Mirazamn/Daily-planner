@@ -1,0 +1,46 @@
+.tasks h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+
+.tasks .completed {
+    text-decoration: line-through;
+}
+
+
+.tasks li.flex {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+.tasks .trash {
+    cursor: pointer;
+    color: #0a0a0a;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+}
+
+
+.tasks .trash:hover {
+    color: #ff0000;
+}
+
+
+.tasks li h3 input {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #0a0a0a; /* pastiga yashil chiziq */
+}
+
+
+.tasks li h3 input:focus {
+    outline: none; /* default outline olib tashlaydi */
+    border-bottom: 2px solid #0a0a0a; /* pastiga yashil chiziq */
+    transition: border-color 0.2s ease-in-out;
+}

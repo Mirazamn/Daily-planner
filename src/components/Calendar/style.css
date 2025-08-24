@@ -1,0 +1,24 @@
+.calendar.flex {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+
+.calendar .day {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.calendar .today {
+    color: cadetblue;
+}
+
+
+.calendar .month {
+    color: brown;
+}
